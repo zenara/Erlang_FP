@@ -1,6 +1,6 @@
 -module(easy).
 
--export([add/2, factorial/1, area/3, area/1, speak/1]).
+-export([add/2, factorial/1, factorial/2, area/3, area/1, speak/1]).
 
 add(X, Y) ->		%% Head
 	X+Y.			%% Body
@@ -35,4 +35,8 @@ speak(Animal) ->
 %% ,	io.format("~w Says ~w ~n",[Animal,Talk]).
 
 
-
+%% accumulators
+factorial(N, TotalFactorial) when N > 0 ->
+	factorial(N -1, N * TotalFactorial);
+factorial(0, TotalFactorial) ->
+	TotalFactorial.
