@@ -3,7 +3,7 @@
 -export([add/2, factorial/1]).
 
 add(X, Y) ->		%% Head
-	X+Y.
+	X+Y.			%% Body
 
 factorial(N) when N > 0 ->
 	N * factorial(N-1);
