@@ -1,6 +1,6 @@
 -module(easy).
 
--export([add/2, factorial/1, area/3, area/1]).
+-export([add/2, factorial/1, area/3, area/1, speak/1]).
 
 add(X, Y) ->		%% Head
 	X+Y.			%% Body
@@ -25,3 +25,14 @@ area({triangle, B, H}) ->
 	0.5 * B * H;
 area(_) ->
 	{error, invalidObject}.
+
+speak(Animal) ->
+	Talk = if
+			   (Animal == cat) -> meaw;
+			   (Animal == dog) -> woofwoof;
+			   true -> no_animal
+		   end.
+%% ,	io.format("~w Says ~w ~n",[Animal,Talk]).
+
+
+
