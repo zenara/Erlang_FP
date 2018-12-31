@@ -1,6 +1,6 @@
 -module(easy).
 
--export([add/2, factorial/1, area/3]).
+-export([add/2, factorial/1, area/3, area/1]).
 
 add(X, Y) ->		%% Head
 	X+Y.			%% Body
@@ -16,3 +16,12 @@ area(Type, N, M) ->
 		circle -> math:pi() * N * N;
 		triangle -> 0.5 * N * M
 	end.
+
+area({square, N}) ->
+	N * N;
+area({circle, R}) ->
+	math:pi() * R * R;
+area({triangle, B, H}) ->
+	0.5 * B * H;
+area(_) ->
+	{error, invalidObject}.
