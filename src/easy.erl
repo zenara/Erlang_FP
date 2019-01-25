@@ -50,3 +50,4 @@ say_something(Value,Times) ->
 start_concurrency(Value1, Value2) ->
 	spawn(easy,say_something,[Value1,3]),
 	spawn(easy,say_something,[Value2,3]).
+
